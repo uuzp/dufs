@@ -22,6 +22,8 @@ body {
   position: sticky;
   top: 0;
   background-color: white;
+  /* Reduce vertical padding to narrow the bar */
+  padding: 0.3em 1em;
 }
 
 .breadcrumb {
@@ -57,6 +59,13 @@ body {
 .toolbox {
   display: flex;
   margin-right: 10px;
+}
+
+.toolbox .control {
+  /* Increase spacing between toolbox icons */
+  margin-right: 0.5em; /* Added margin */
+  cursor: pointer;
+  padding-left: 0.25em;
 }
 
 .toolbox>a,
@@ -249,6 +258,23 @@ body {
 .retry-btn {
   cursor: pointer;
 }
+
+/* Style for the semi-transparent file list container */
+.file-container {
+  background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  padding: 2em;
+  margin: 2em auto; /* Center the box horizontally */
+  max-width: 90%; /* Limit width */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .file-container {
+    background-color: rgba(30, 30, 30, 0.8); /* Darker semi-transparent for dark mode */
+  }
+}
+
 
 @media (min-width: 768px) {
   .path a {
