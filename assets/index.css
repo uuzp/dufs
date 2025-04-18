@@ -1,5 +1,7 @@
 html {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  /* Increase base font size */
+  font-size: 1.35em; 
   line-height: 1.5;
   color: #24292e;
 }
@@ -8,6 +10,12 @@ body {
   /* prevent premature breadcrumb wrapping on mobile */
   min-width: 538px;
   margin: 0;
+  /* Add background image */
+  background-image: url('background.png');
+  background-size: cover; /* Scale the image to cover the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-attachment: fixed; /* Keep the background fixed during scroll */
+  background-position: center center; /* Center the image */
 }
 
 .hidden {
@@ -138,6 +146,11 @@ body {
   white-space: nowrap;
 }
 
+/* Ensure the table fills its container */
+.paths-table {
+  width: 100%;
+}
+
 .uploaders-table .cell-status {
   width: 80px;
   padding-left: 0.6em;
@@ -161,21 +174,24 @@ body {
 }
 
 .paths-table .cell-actions {
-  width: 90px;
+  /* Adjust width and padding */
+  width: 100px; 
   display: flex;
-  padding-left: 0.5em;
+  padding-left: 1em; 
 }
 
 .paths-table .cell-mtime {
-  width: 120px;
-  padding-left: 0.5em;
+  /* Adjust width and padding */
+  width: 140px; 
+  padding-left: 1em; 
   font-variant-numeric: tabular-nums;
 }
 
 .paths-table .cell-size {
   text-align: right;
-  width: 70px;
-  padding-left: 0.5em;
+  /* Adjust width and padding */
+  width: 90px; 
+  padding-left: 1em; 
   font-variant-numeric: tabular-nums;
 }
 
@@ -197,8 +213,10 @@ body {
   overflow: hidden;
   display: block;
   text-decoration: none;
-  max-width: calc(100vw - 375px);
+  /* Let the name link expand */
   min-width: 170px;
+  /* Ensure it doesn't overflow its cell */
+  max-width: 100%; 
 }
 
 .path a:hover {
@@ -262,11 +280,15 @@ body {
 /* Style for the semi-transparent file list container */
 .file-container {
   background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
-  padding: 2em;
+  /* Adjust padding for better internal spacing */
+  padding: 2em 3em; 
   margin: 2em auto; /* Center the box horizontally */
-  max-width: 90%; /* Limit width */
+  /* Reduce max-width */
+  max-width: 80%; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add horizontal scroll on overflow */
+  overflow-x: auto; 
 }
 
 @media (prefers-color-scheme: dark) {
