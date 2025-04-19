@@ -58,7 +58,6 @@ const INDEX_HTML: &str = include_str!("../assets/index.html");
 const INDEX_CSS: &str = include_str!("../assets/index.css");
 const INDEX_JS: &str = include_str!("../assets/index.js");
 const FAVICON_ICO: &[u8] = include_bytes!("../assets/favicon.ico");
-// Embed the background image
 const BACKGROUND_PNG: &[u8] = include_bytes!("../assets/background.png"); 
 const INDEX_NAME: &str = "index.html";
 const BUF_SIZE: usize = 65536;
