@@ -316,6 +316,111 @@ body {
   }
 }
 
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  html {
+    /* Reduce base font size for smaller screens */
+    font-size: 1.1em; 
+  }
+
+  body {
+    /* Remove minimum width constraint for mobile */
+    min-width: unset;
+  }
+
+  .head {
+    /* Reduce vertical padding further */
+    padding: 0.2em 0.5em;
+    /* Allow items to wrap if needed */
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb {
+    /* Allow breadcrumb to take full width initially if header wraps */
+    width: 100%;
+    padding-bottom: 0.3em; /* Add some space if it wraps */
+  }
+
+  .toolbox {
+    /* Reduce spacing between toolbox icons */
+    margin-right: 5px;
+  }
+
+  .toolbox .control {
+    margin-right: 0.3em; 
+    padding-left: 0.15em;
+  }
+  
+  .toolbox-right {
+     margin-right: 0.5em; /* Reduce right margin */
+  }
+
+  .searchbar {
+    /* Make search bar take available space */
+    width: auto;
+    flex-grow: 1; /* Allow it to grow */
+    margin-left: 0.5em; /* Add some space from toolbox */
+    height: 30px; /* Slightly reduce height */
+    order: 3; /* Move search bar below breadcrumb and toolbox if wrapped */
+    width: calc(100% - 1em); /* Take full width minus padding */
+    margin-top: 0.3em; /* Add space when wrapped */
+  }
+
+  .main {
+    padding: 0 0.5em; /* Reduce main padding */
+  }
+
+  .file-container {
+    /* Use more screen width, reduce padding */
+    max-width: 95%; 
+    padding: 1em 1em; 
+    margin: 1em auto; /* Reduce top/bottom margin */
+  }
+
+  /* Make table columns flexible */
+  .paths-table .cell-actions,
+  .paths-table .cell-mtime,
+  .paths-table .cell-size {
+    width: auto; 
+    padding-left: 0.5em; /* Reduce padding */
+    white-space: nowrap; /* Keep content on one line if possible */
+  }
+  
+  .paths-table .cell-size {
+      text-align: left; /* Align size left on mobile for consistency */
+  }
+
+  /* Remove min-width for path links */
+  .path a {
+    min-width: unset; 
+    max-width: 150px; /* Add a max-width to prevent extreme stretching */
+  }
+  
+  /* Reduce padding in table cells */
+  .uploaders-table td,
+  .paths-table td {
+      padding-top: 0.4em;
+      padding-bottom: 0.4em;
+  }
+  
+  .paths-table th {
+      padding-left: 0.5em; /* Align header padding */
+  }
+  
+  .paths-table .cell-name {
+      padding-left: 0; /* Remove extra padding for name column header */
+  }
+
+  /* Hide modification time on very small screens if needed */
+  /* 
+  @media (max-width: 480px) {
+    .paths-table .cell-mtime {
+      display: none;
+    }
+  } 
+  */
+}
+
 
 @media (min-width: 768px) {
   .path a {
